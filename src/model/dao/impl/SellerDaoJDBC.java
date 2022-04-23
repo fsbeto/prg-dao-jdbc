@@ -82,7 +82,6 @@ public class SellerDaoJDBC implements SellerDao {
 	@Override
 	public void deleteById(Integer id) {
 		PreparedStatement st = null;
-
 		try {
 			st = conn.prepareStatement("DELETE FROM seller WHERE Id = ?");
 			st.setInt(1, id);
@@ -103,7 +102,6 @@ public class SellerDaoJDBC implements SellerDao {
 	public Seller findById(Integer id) {
 		PreparedStatement st = null;
 		ResultSet rs = null;
-
 		try {
 			st = conn.prepareStatement(
 					"SELECT seller.*,department.Name as DepName " + "FROM seller INNER JOIN department "
@@ -147,7 +145,6 @@ public class SellerDaoJDBC implements SellerDao {
 	public List<Seller> findAll() {
 		PreparedStatement st = null;
 		ResultSet rs = null;
-
 		try {
 			st = conn.prepareStatement(
 					"SELECT seller.*,department.Name as DepName " + "FROM seller INNER JOIN department "
@@ -181,7 +178,6 @@ public class SellerDaoJDBC implements SellerDao {
 	public List<Seller> findByDepartment(Department department) {
 		PreparedStatement st = null;
 		ResultSet rs = null;
-
 		try {
 			st = conn.prepareStatement(
 					"SELECT seller.*,department.Name as DepName " + "FROM seller INNER JOIN department "
